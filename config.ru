@@ -6,8 +6,8 @@ Bundler.require
 
 require 'listen'
 
-stdout.sync = true
-config.logger = Logger.new(STDOUT)
+$stdout.sync = true
+logger = Logger.new(STDOUT)
 
 run GithubTrello
 
