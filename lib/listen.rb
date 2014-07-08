@@ -12,15 +12,17 @@ class GithubTrello < Sinatra::Base
   end
 
   post '/payload' do
+    pp params
     puts 'execute payload'
     if params[:Payload]
       push = JSON.parse(params[:Payload])
+      puts 'test meeee'
       puts push
       short_code = MessageParser.trello_short_code(push['head_commit']['message'])
       @card = Trello::Card.find(short_code) if short_code
 
-      puts short_code
-      puts @card
+      pp short_code
+      pp @card
 
       if short_code && @card
         author = push['head_commit']['author']['name']
