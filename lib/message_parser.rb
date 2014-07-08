@@ -5,7 +5,7 @@ class MessageParser
   end
 
   def self.remove_trello_id(commit_message)
-  	result = commit_message.gsub(https://trello.com/c/(.*). '')
+  	result = commit_message.gsub(%r|https://trello.com/c/(.*)|,'')
   	return result
 end
 
