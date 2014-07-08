@@ -3,6 +3,7 @@ require 'json'
 require 'client'
 require 'comment_formatter'
 require 'message_parser'
+require 'pp'
 
 class GithubTrello < Sinatra::Base
   puts 'GithubTrello'
