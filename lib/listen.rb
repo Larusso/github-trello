@@ -7,6 +7,10 @@ require 'message_parser'
 class GithubTrello < Sinatra::Base
   puts 'GithubTrello'
 
+  get '/' do
+    "Hello World!"
+  end
+
   post '/payload' do
     puts 'execute payload'
     if params[:payload]
