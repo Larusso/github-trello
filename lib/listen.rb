@@ -13,10 +13,9 @@ class GithubTrello < Sinatra::Base
   end
 
   post '/payload' do
-    pp params
     puts 'execute payload'
-    if params[:Payload]
-      push = JSON.parse(params[:Payload])
+    if params[:payload]
+      push = JSON.parse(params[:payload])
       puts 'test meeee'
       puts push
       short_code = MessageParser.trello_short_code(push['head_commit']['message'])
