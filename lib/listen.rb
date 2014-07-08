@@ -13,6 +13,7 @@ class GithubTrello < Sinatra::Base
   end
 
   post '/payload' do
+    puts params
     puts 'execute payload'
     if params[:payload]
       push = JSON.parse(params[:payload])
