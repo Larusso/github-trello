@@ -5,6 +5,8 @@ require 'comment_formatter'
 require 'message_parser'
 
 class GithubTrello < Sinatra::Base
+  puts 'GithubTrello'
+
   post '/payload' do
     puts 'execute payload'
     if params[:payload]
