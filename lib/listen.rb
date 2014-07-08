@@ -12,6 +12,9 @@ class GithubTrello < Sinatra::Base
       short_code = MessageParser.trello_short_code(push['head_commit']['message'])
       @card = Trello::Card.find(short_code) if short_code
 
+      puts short_code
+      puts @card
+
       if short_code && @card
         author = push['head_commit']['author']['name']
         message = push['head_commit']['message']
