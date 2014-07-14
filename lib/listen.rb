@@ -8,6 +8,7 @@ require 'pp'
 class GithubTrello < Sinatra::Base
   
   post '/payload' do
+    pp params
     request_payload = JSON.parse(params[:payload])
     pp request_payload    
     unless request_payload.nil?
