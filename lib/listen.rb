@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'json'
-require 'CGI'
 require 'client'
 require 'comment_formatter'
 require 'message_parser'
