@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 describe 'the listener' do
   include Rack::Test::Methods
   
@@ -8,7 +7,7 @@ describe 'the listener' do
 
   it 'bails with no payload' do
     post '/payload'
-    expect(last_response).to be_ok
+    expect(last_response).not_to be_ok
   end
 
   it 'bails with bad creds' do
